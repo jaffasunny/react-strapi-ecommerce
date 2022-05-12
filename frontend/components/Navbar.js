@@ -26,7 +26,7 @@ const Navbar = () => {
               <a className='mr-5 hover:text-gray-900'>Contact Us</a>
             </Link>
           </nav>
-          <button class='my-2 text-white bg-indigo-500 border-0 py-1 md:py-2 px-2 md:px-4 focus:outline-none hover:bg-indigo-600 rounded text-sm'>
+          <button className='my-2 text-white bg-indigo-500 border-0 py-1 md:py-2 px-2 md:px-4 focus:outline-none hover:bg-indigo-600 rounded text-sm'>
             Login
           </button>
         </div>

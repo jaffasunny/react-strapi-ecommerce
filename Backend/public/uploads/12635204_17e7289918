@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html ng-app="metroapp" ng-controller="MainCtrl" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<base href="/" />
+<title ng-bind-html="Page.pagetitle()"></title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta https-equiv="X-Frame-Options" content="deny">
+<meta name="facebook-domain-verification" content="9hhyf6svhpobaljxafv1iegtqic48e" />
+<meta name="description" id="metadesc" content="Metro Online: Delivering the Freshest Groceries in Lahore, Islamabad, Karachi & Faisalabad. Shop Anywhere Anytime. Fast open box delivery guaranteed. Free Delivery over Rs 2,000. Frozen / Fresh Vegetables, Fruits, Meats and other food.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://metro-online.pk/">
+<meta property="og:title" content="MetroOnline.pk | The Best Online Grocery & Electronics Store">
+<meta property="og:description" id="ogmetadesc" content="Metro Online is the best online supermarket providing you with fast open box home delivery of your complete grocery list. Multiple payment options. Order now!">
+<meta property="og:image" content="https://metro-online.pk/images/Metro-gala-logo.png">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metro-online.pk/">
+<meta property="twitter:title" content="MetroOnline.pk | The Best Online Grocery & Electronics Store">
+<meta property="twitter:description" id="twmetadesc" content="Metro Online is the best online supermarket providing you with fast open box home delivery of your complete grocery list. Multiple payment options. Order now!">
+<meta property="twitter:image" content="https://metro-online.pk/images/Metro-gala-logo.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=11" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+<script type="c1d36449184eba96d22b535c-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-54PXCN5');
+        </script>
+<script type="c1d36449184eba96d22b535c-text/javascript">
+            "use strict";
+            var sessionStorage_transfer = function(event) {
+            if(!event) { event = window.event; } 
+            if(!event.newValue) return;          
+            if (event.key == 'getSessionStorage') {
+            localStorage.setItem('sessionStorage', JSON.stringify(sessionStorage));
+            localStorage.removeItem('sessionStorage');
+            } else if (event.key == 'sessionStorage' && !sessionStorage.length) {
+            var data = JSON.parse(event.newValue);
+            for (var key in data) {
+                    sessionStorage.setItem(key, data[key]);
+            }
+            }
+            }
+            if(window.addEventListener) {
+            window.addEventListener("storage", sessionStorage_transfer, false);
+            } else {
+                window.attachEvent("onstorage", sessionStorage_transfer);
+            }
+            if (!sessionStorage.length) {
+            localStorage.setItem('getSessionStorage', 'foobar');
+            localStorage.removeItem('getSessionStorage', 'foobar');
+            }
+        </script>
+<link href="./css/stylesheet.css?55" rel="stylesheet" type="text/css" />
+<link href="images/favicon.png" rel="shortcut icon" type="image/ico">
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script type="c1d36449184eba96d22b535c-text/javascript">
+              /*var config = {
+                    apiKey: "AIzaSyCp22l5eIxpD_UJBPEFM0OOizPGLKYo28M",
+                    authDomain: "metro-login.firebaseapp.com",
+                    databaseURL: "https://metro-login.firebaseio.com",
+                    projectId: "metro-login",
+                    storageBucket: "metro-login.appspot.com",
+                    messagingSenderId: "634602658739"
+            }; */
+            var config = {
+                apiKey: "AIzaSyBYqE677sS2fgmKdrbgMJDkw_iLiYBCWdc",
+                authDomain: "metro-online-web.firebaseapp.com",
+                databaseURL: "https://metro-online-web.firebaseio.com",
+                projectId: "metro-online-web",
+                storageBucket: "metro-online-web.appspot.com",
+                messagingSenderId: "955481786310",
+                appId: "1:955481786310:web:4f57f96d720b6aedfb54c7",
+                measurementId: "G-R03Q8LSCVK"
+            };
+            firebase.initializeApp(config);
+        </script>
+<script type="c1d36449184eba96d22b535c-text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script type="c1d36449184eba96d22b535c-text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.8.0/angular-animate.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script src="https://code.angularjs.org/1.8.0/angular-aria.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script src="https://code.angularjs.org/1.8.0/angular-messages.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script src="./js/angular-material.min.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script src="./js/rzslider.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script src="./js/otpInputDirective.min.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script src="https://code.angularjs.org/1.8.0/angular-sanitize.js" type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9jSUWGuiEoLZCODFEybrfsTX0HAkSaK4&?libraries=geometry" defer type="c1d36449184eba96d22b535c-text/javascript"></script>
+
+
+<script type="c1d36449184eba96d22b535c-text/javascript" src="./js/appnew.js?120522012834newfeature2042"></script>
+<script defer type="c1d36449184eba96d22b535c-text/javascript">
+            window.__lc = window.__lc || {};
+            window.__lc.license = 9007975;
+            (function() {
+              var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+              lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+            })();
+        </script>
+
+<script defer type="c1d36449184eba96d22b535c-text/javascript">
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            function fbPixelEnabled(){
+                fbq('init', '270753060294965');
+                fbq('track', 'PageView');
+            }
+        </script>
+<noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=270753060294965&ev=PageView&noscript=1"
+            /></noscript>
+
+
+<script defer type="c1d36449184eba96d22b535c-text/javascript">
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            function fbPixelEnabled(){
+                fbq('init', '1378741062260149');
+                fbq('track', 'PageView');
+            }
+        </script>
+<noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1378741062260149&ev=PageView&noscript=1"
+            /></noscript>
+
+<script data-cfasync="false">
+  !function(e,a,n,d,g){e.dengage=e.dengage||function(){(e.dengage.q=e.dengage.q||[]).push(arguments)},d=a.getElementsByTagName("head")[0],(g=a.createElement("script")).async=1,g.src="https://pcdn.dengage.com/p/push/153/eaf16808-fce1-a44b-7ceb-c2a299ceb6b8/dengage_sdk.js",d.appendChild(g)}(window,document);
+
+//   dengage('initialize', {swUrl: '/firebase-messaging-sw.js'});
+  dengage('initialize');
+</script>
+<style>
+            .ce-banner {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #dedede;
+                padding: 1em;
+                color: #232323;
+                font-size: 1em;
+                z-index: 99;
+                display: none
+            }
+            .ce-banner p {
+                margin: 0;
+            }
+
+            .ce-accept, .ce-dismiss {
+                background: #003d7c;
+                border: 1px solid #003d7c;
+                text-decoration: none;
+                padding: .6em 1em;
+                display: inline-block;
+                margin-left: 1em;
+                color: #fff !important;
+            }
+            .ce-banner a{color: blue}
+        </style>
+</head>
+<body scroll class="{{Page.homeclass()}}" ng-class="{'hideacsubmenu': !metrologin || metrologin == 0, 'showapplinkinheader':showheaderapplinks === true, 'showprimarymenu':openprimarymenu === true, 'signinsubmenushow': boolChangeClass === true}">
+<md-progress-linear md-mode="indeterminate" ng-show="isLoading"></md-progress-linear>
+<header id="primarynavigationHeader" ng-hide="isLoading" ng-cloak class="primaryNavigation">
+<div class="applinkwrap">
+<div class="applinkinner" ng-if="!hideiosicon">
+<img src="./images/appicon.png" alt="">
+<h5>Metro Online</h5>
+<h6>Metro</h6>
+<h6>FREE - On App Store</h6>
+<button class="closeiconbtn" type="button" aria-label="closepop" ng-click="closeapplinkwrap()">
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="ng-scope">
+<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+<path d="M0 0h24v24H0z" fill="none"></path>
+</svg>
+</button>
+<a href="https://itunes.apple.com/pk/app/metro-online/id1262899618?mt=8" target="_blank" class="md-button blankbtn">View</a>
+</div>
+<div class="applinkinner" ng-if="!hideandroidicon">
+<img src="./images/appicon.png" alt="">
+<h5>Metro Online</h5>
+<h6>Metro</h6>
+<h6>FREE - On Google Play</h6>
+<button class="closeiconbtn" type="button" aria-label="closepop" ng-click="closeapplinkwrap()">
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="ng-scope">
+<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+<path d="M0 0h24v24H0z" fill="none"></path>
+</svg>
+</button>
+<a href="https://play.google.com/store/apps/details?id=com.metro.metroestore" target="_blank" class="md-button blankbtn">View</a>
+</div>
+</div>
+<div class="top" style="border-bottom: 0;background: #ffbd31b8;" ng-if="Page.getNotification() != ''">
+<div class="container">
+<div class="toplinkswrap" style="text-align: center;color: #fff;">
+<span>{{ Page.getNotification() }}</span>
+</div>
+</div>
+</div>
+<div class="top">
+<div class="container">
+<div class="toplinkswrap">
+<a ng-click="changelocation()" class="latore ricon smallicon floatLeft cityselectionlink">
+<svg class="city" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45 42.8" style="enable-background:new 0 0 45 42.8;" xml:space="preserve">
+<g>
+<path d="M42.8,21c0-0.6-0.4-1-1-1h-4.2v-4.2c0-0.6-0.4-1-1-1h-4.4v-7c0-0.6-0.4-1-1-1h-7.6V0h-1.8v6.8h-8.4
+                                        c-0.6,0-1,0.4-1,1v14.4H3.6c-0.6,0-1,0.4-1,1V41H0v1.8h45V41h-2.6L42.8,21L42.8,21z M35.8,16.8V21c0,0.6,0.4,1,1,1H41v19.2h-8.6
+                                        v-3.4h3.8V36h-3.8v-2.8h3.8v-1.8h-3.8v-2.8h3.8v-1.8h-3.8v-10L35.8,16.8L35.8,16.8z M14.4,8.8h16.2V41H14.4V8.8z M4.8,24.2h7.8V41
+                                        H4.8V24.2z" />
+<rect x="6.4" y="27" width="4.4" height="1.8" />
+<rect x="6.4" y="31.6" width="4.4" height="1.8" />
+<rect x="6.4" y="36.2" width="4.4" height="1.8" />
+<rect x="16.8" y="13.4" width="1.8" height="4.8" />
+<rect x="21.6" y="13.4" width="1.8" height="4.8" />
+<rect x="26.2" y="13.4" width="1.8" height="4.8" />
+<rect x="16.8" y="22.6" width="1.8" height="4.8" />
+<rect x="21.6" y="22.6" width="1.8" height="4.8" />
+<rect x="26.2" y="22.6" width="1.8" height="4.8" />
+<rect x="16.8" y="31.8" width="1.8" height="4.8" />
+<rect x="21.6" y="31.8" width="1.8" height="4.8" />
+<rect x="26.2" y="31.8" width="1.8" height="4.8" />
+</g>
+</svg>
+<span>{{scity.code}}</span>
+<svg viewBox="6 6 12 12" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z"></path>
+<path d="M0 0h24v24H0z" fill="none"></path>
+</svg>
+</a>
+<a ng-click="changeaddress()" ng-show="scity.custom_address" class="latore ricon smallicon floatLeft cityselectionlink">
+<svg class="city" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45 42.8" style="enable-background:new 0 0 45 42.8;" xml:space="preserve">
+<g>
+<path d="M42.8,21c0-0.6-0.4-1-1-1h-4.2v-4.2c0-0.6-0.4-1-1-1h-4.4v-7c0-0.6-0.4-1-1-1h-7.6V0h-1.8v6.8h-8.4
+                                        c-0.6,0-1,0.4-1,1v14.4H3.6c-0.6,0-1,0.4-1,1V41H0v1.8h45V41h-2.6L42.8,21L42.8,21z M35.8,16.8V21c0,0.6,0.4,1,1,1H41v19.2h-8.6
+                                        v-3.4h3.8V36h-3.8v-2.8h3.8v-1.8h-3.8v-2.8h3.8v-1.8h-3.8v-10L35.8,16.8L35.8,16.8z M14.4,8.8h16.2V41H14.4V8.8z M4.8,24.2h7.8V41
+                                        H4.8V24.2z" />
+<rect x="6.4" y="27" width="4.4" height="1.8" />
+<rect x="6.4" y="31.6" width="4.4" height="1.8" />
+<rect x="6.4" y="36.2" width="4.4" height="1.8" />
+<rect x="16.8" y="13.4" width="1.8" height="4.8" />
+<rect x="21.6" y="13.4" width="1.8" height="4.8" />
+<rect x="26.2" y="13.4" width="1.8" height="4.8" />
+<rect x="16.8" y="22.6" width="1.8" height="4.8" />
+<rect x="21.6" y="22.6" width="1.8" height="4.8" />
+<rect x="26.2" y="22.6" width="1.8" height="4.8" />
+<rect x="16.8" y="31.8" width="1.8" height="4.8" />
+<rect x="21.6" y="31.8" width="1.8" height="4.8" />
+<rect x="26.2" y="31.8" width="1.8" height="4.8" />
+</g>
+</svg>
+<span>{{scity.custom_address}}</span>
+<svg viewBox="6 6 12 12" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z"></path>
+<path d="M0 0h24v24H0z" fill="none"></path>
+</svg>
+</a>
+<a ng-href="./trackmyorder" class="latore trackheaderlink" ng-if="metrologin">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="183 373 48 48">
+<path d="M207,373c9.277,0,16.797,7.522,16.797,16.8c0,9.022,0.85,11.856,6.495,17.503c1.512,1.512,0.442,4.097-1.697,4.097h-13.319 l0.121,1.2c0,4.639-3.76,8.4-8.398,8.4s-8.398-3.761-8.398-8.4l0.121-1.2h-13.318c-2.138,0-3.208-2.585-1.697-4.097 c3.154-3.156,4.864-5.815,5.697-8.593c0.67-2.23,0.799-4.046,0.799-8.91C190.203,380.521,197.723,373,207,373z M207,375.4 c-7.951,0-14.397,6.448-14.397,14.4c0,7.2,0,12-7.198,19.2h43.192c-7.198-7.2-7.198-12-7.198-19.2 C221.397,381.848,214.951,375.4,207,375.4z M212.878,411.4h-11.755l-0.121,1.2c0,3.313,2.686,6,5.999,6c3.313,0,5.999-2.687,5.999-6 L212.878,411.4z" />
+</svg>
+<span>Track Order</span>
+</a>
+
+<a href="tel:(042) 111-0-METRO" class="latore">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="183 373 48 48">
+<g>
+<g>
+<path d="M220.472,395.742c-0.074,0-0.148-0.006-0.223-0.018c-0.772-0.122-1.299-0.847-1.177-1.62 c0.207-1.307,0.118-2.626-0.265-3.92c-0.435-1.471-1.258-2.859-2.317-3.909c-1.106-1.095-2.4-1.786-3.743-1.999 c-0.81-0.128-1.611-0.078-2.383,0.151c-0.749,0.221-1.537-0.206-1.759-0.955c-0.222-0.75,0.206-1.537,0.955-1.759 c1.18-0.349,2.401-0.427,3.63-0.232c1.932,0.307,3.762,1.269,5.292,2.784c1.413,1.4,2.463,3.169,3.04,5.117 c0.503,1.701,0.62,3.44,0.347,5.166C221.758,395.245,221.156,395.742,220.472,395.742z" />
+</g>
+<g>
+<path d="M227.836,399.337c-0.146,0-0.295-0.023-0.441-0.071c-0.743-0.243-1.148-1.043-0.904-1.786c1.091-3.329,1.088-6.876-0.01-10.257c-0.786-2.423-2.118-4.667-3.851-6.488c-1.764-1.854-3.899-3.228-6.176-3.973c-2.72-0.891-5.504-0.887-8.274,0.013c-0.744,0.241-1.542-0.166-1.783-0.909c-0.241-0.744,0.166-1.542,0.909-1.783c3.305-1.073,6.773-1.077,10.029-0.01c2.72,0.891,5.261,2.52,7.346,4.712c2.023,2.126,3.576,4.742,4.492,7.565c1.283,3.955,1.286,8.109,0.007,12.012C228.986,398.958,228.432,399.337,227.836,399.337z" />
+</g>
+<g>
+<path d="M207.665,408.442c-3.196,0-6.988-2.164-9.835-5.88c-3.819-4.984-4.499-10.884-1.583-13.723 c0.56-0.545,1.456-0.533,2.002,0.027c0.545,0.56,0.533,1.456-0.027,2.002c-1.594,1.551-1.338,5.805,1.855,9.972 c3.193,4.167,7.233,5.523,9.146,4.386c0.672-0.399,1.541-0.178,1.94,0.495c0.399,0.672,0.178,1.541-0.495,1.94 C209.777,408.19,208.756,408.442,207.665,408.442z" />
+</g>
+<g>
+<path d="M212.441,420.725c-2.039,0-4.483-0.829-7.177-2.466c-4.11-2.499-8.54-6.701-12.473-11.835 c-8.384-10.942-11.324-21.982-6.838-25.681c2.467-2.034,2.884-2.27,3.465-2.325c0.775-0.077,1.469,0.496,1.544,1.274 c0.064,0.671-0.351,1.278-0.966,1.48c-0.176,0.11-0.7,0.485-2.242,1.756c-2.725,2.247-0.403,11.742,7.284,21.775 c7.736,10.096,16.279,14.803,19.109,12.713c1.702-1.257,2.197-1.669,2.336-1.804c0.428-0.576,1.231-0.746,1.861-0.37 c0.671,0.4,0.891,1.269,0.49,1.941c-0.225,0.378-0.543,0.692-3.006,2.511C214.894,420.383,213.751,420.725,212.441,420.725z  M216.404,415.729c0,0.001-0.001,0.001-0.001,0.002C216.403,415.731,216.403,415.73,216.404,415.729z M216.506,415.588 L216.506,415.588L216.506,415.588z" />
+</g>
+<g>
+<path d="M219.446,416.93c-0.119,0-0.239-0.008-0.359-0.024c-0.711-0.094-1.343-0.459-1.778-1.027l-7.4-9.658c-0.899-1.174-0.676-2.861,0.497-3.761l3.354-2.57c1.175-0.899,2.862-0.676,3.762,0.498l7.4,9.658c0.435,0.567,0.623,1.272,0.529,1.984c-0.094,0.711-0.459,1.342-1.027,1.777l-3.353,2.57C220.599,416.74,220.032,416.93,219.446,416.93z M219.556,414.157L219.556,414.157C219.557,414.158,219.556,414.158,219.556,414.157z M212.246,404.617l7.221,9.423l3.118-2.389l-7.22-9.423L212.246,404.617z" />
+</g>
+<g>
+<path d="M199.553,390.973c-0.807,0-1.605-0.361-2.132-1.049c0,0,0,0,0,0l-7.4-9.659c-0.9-1.174-0.676-2.861,0.497-3.761 l3.354-2.57c1.176-0.899,2.863-0.676,3.762,0.498l7.4,9.658c0.899,1.174,0.676,2.861-0.497,3.761l-3.354,2.57 C200.696,390.793,200.122,390.973,199.553,390.973z M192.357,378.661l7.22,9.424l3.119-2.389l-7.221-9.423L192.357,378.661z" />
+</g>
+</g>
+</svg>
+<span>(042) 111-0-METRO <span>09 AM - 10 PM</span> </span>
+</a>
+</div>
+</div>
+</div>
+<div class="a-section glow-toaster glow-toaster-theme-default glow-toaster-slot-default nav-coreFlyout nav-flyout" ng-if="tooltip_change == 'Y'" style="margin-top: -20px;">
+<div class="glow-toaster-content">
+<h6 class="latobd" style="color:#163e7c">Metro Online ships all across Pakistan.</h6>
+<div id="glow-toaster-body" class="a-section a-spacing-none glow-toaster-body">
+<span class="a-size-base">
+You are seeing the items and details for <strong>Lahore</strong>. Change the city to view items and prices applicable to your city.
+</span>
+</div>
+<br />
+<div class="glow-toaster-footer">
+<button ng-click="changelocation();" class="blueButton md-button yellowhover addtocarttbn" style="">Change Store</button>
+<br />
+<button ng-click="closetooltip();" class="blueButton md-button yellowhover addtocarttbn" style="">No, continue shopping</button>
+<span>{{citymsgmd}}</span>
+</div>
+</div>
+</div>
+<nav class="toplogowrap for-desktop">
+<div class="container">
+<div class="logowrap clearfix">
+<button class="md-icon-button md-primary navbtnwrap md-button md-ink-ripple" id="primarynavbtn" aria-label="menubtn" ng-class="{active:openprimarymenu}" ng-click="openprimarymenufun()">
+<span class="navbtn close_popup_btn">
+<i class="line"></i>
+<i class="line mid"></i>
+<i class="line"></i>
+</span>
+</button>
+<a class="logo" ng-href="{{indexUrl}}"><img src="images/Metro-gala-logo.png??5"></a>
+<div class="newheaderSearch" ng-class="{searchshow: showheadersearch}">
+<div class="searchWrap" ng-class="{searchshow: showheadersearch}">
+<form name="searchform" ng-submit="serachFormsubmit(selectedItem)" novalidate autocomplete="off">
+<md-autocomplete md-input-name="searchfielinput" md-no-cache="true" md-input-class="searchproducts" md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getsearchdata(searchText)" md-item-text="item.product_name" placeholder="Search">
+<md-item-template>
+<a class="searcitem" ng-class="item.searchclass" ng-href="{{item.product_url}}">
+<span class="image"><img ng-src="{{item.images}}" class="img" alt="" ng-if="item.images != 0"><span class="icon" ng-if="item.icon != 0">{{item.icon}}</span></span>
+<span class="name">{{item.product_name}}</span>
+<span class="price" ng-if="item.product_price != 0">Rs. {{item.product_price}}
+<del ng-if="item.product_sale_price != 0">Rs.{{(item.product_price * 1) + (item.product_sale_price * 1)}}</del>
+</span>
+</a>
+</md-item-template>
+<md-not-found>
+No Product matching "{{searchText}}" were found.
+</md-not-found>
+</md-autocomplete>
+<md-button class="md-raised" aria-label="Search" type="submit" ng-disabled="searchform.$invalid">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.99 36">
+<defs>
+<style>
+                                                    .cls-1 {
+                                                    fill: #a4a4a4;
+                                                    }
+                                                </style>
+</defs>
+<title>Search icon</title>
+<path class="cls-1" d="M35.69,34.17l-8.75-8.74a15.35,15.35,0,1,0-1.52,1.52l8.75,8.74a1.08,1.08,0,0,0,.76.32,1.05,1.05,0,0,0,.76-.32A1.08,1.08,0,0,0,35.69,34.17ZM2.18,15.37A13.19,13.19,0,1,1,15.37,28.57h0A13.19,13.19,0,0,1,2.18,15.37Z" transform="translate(0 0)" />
+</svg>
+</md-button>
+</form>
+</div>
+</div>
+<div class="rightButtons">
+<div class="accountWrap rightlink floatLeft">
+<span class="link" ng-if="!metrologin">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+<defs>
+<style>.cls-1{fill:#163e7c;}</style>
+</defs>
+<title>Sign in</title>
+<path class="cls-1" d="M18,0A10.13,10.13,0,0,0,7.68,9.91c0,5.48,4.64,15.54,10.32,15.54S28.32,15.38,28.32,9.91A10.13,10.13,0,0,0,18,0" />
+<path class="cls-1" d="M9.28,24.72C3.76,26.25,0,29.32,0,33.26,0,35.19,1.28,36,4.88,36H31.12c3.6,0,4.88-.81,4.88-2.74,0-3.95-3.76-7-9.28-8.54-2.32,2.82-5.28,4.83-8.72,4.83s-6.4-2-8.72-4.83" />
+</svg>
+<span>
+<span class="Name hideontablet ng-binding ng-scope">Hello Guest</span>
+<br class="hideontablet">
+<span class="ng-scope">
+Your Account
+<svg viewBox="6 6 12 12" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z"></path>
+ <path d="M0 0h24v24H0z" fill="none"></path>
+</svg>
+</span>
+</span>
+<div class="select ng-scope">
+<div class="list md-whiteframe-3dp">
+<a ng-click="saveurl()" href="./signin">Login</a>
+<a href="./signup">Register</a>
+</div>
+</div>
+</span>
+<span class="link" ng-if="metrologin">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+<defs>
+<style>.cls-1{fill:#163e7c;}</style>
+</defs>
+<title>Sign in</title>
+<path class="cls-1" d="M18,0A10.13,10.13,0,0,0,7.68,9.91c0,5.48,4.64,15.54,10.32,15.54S28.32,15.38,28.32,9.91A10.13,10.13,0,0,0,18,0" />
+<path class="cls-1" d="M9.28,24.72C3.76,26.25,0,29.32,0,33.26,0,35.19,1.28,36,4.88,36H31.12c3.6,0,4.88-.81,4.88-2.74,0-3.95-3.76-7-9.28-8.54-2.32,2.82-5.28,4.83-8.72,4.83s-6.4-2-8.72-4.83" />
+</svg>
+<span>
+<span class="Name hideontablet ng-binding ng-scope">Hello {{metrologin}}</span>
+<br class="hideontablet">
+<span class="ng-scope">
+Your Account
+<svg viewBox="6 6 12 12" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z"></path>
+<path d="M0 0h24v24H0z" fill="none"></path>
+</svg>
+</span>
+</span>
+<div class="select ng-scope">
+<div class="list md-whiteframe-3dp">
+<a href="./myaccount">My Profile</a>
+<a href="./mywallet">My Wallet</a>
+<a href="./myorder">My Orders</a>
+<a href="./savedcart">Saved Cart</a>
+<a href="./shoppinglist">My Shopping List</a>
+<div class="logoutbutton">
+<button ng-click="logoutfromweb();" class="blueButton md-button md-ink-ripple">Logout</button>
+</div>
+</div>
+</div>
+</span>
+</div>
+<div class="cart floatLeft">
+<a href="./viewcart" class="carticonanchor" ng-class="itemaddedtocart">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 792 612">
+<path d="M548,480.6c-14.4,18.5-25.4,24.9-34.4,26.1c-15.4,1.4-29.3-27.8,20.4-72.5c0.8-0.9,0.8-2.2-0.1-3.4
+                                            C564.5,407.3,590,425.9,548,480.6L548,480.6z M557.4,399.6c-11.7,3.6-27.5,14.4-28.9,20.3c-0.5,0.6-0.5,1.6-0.5,2.2
+                                            c-8.4,6.7-21.4,19-31.2,33.9c-40.4,63.2,9.1,111.7,65.2,50C629.5,432.2,607.4,383.4,557.4,399.6L557.4,399.6z"></path>
+ <path d="M416.4,473.3c-10.8,13.9-19,18.6-25.7,19.5c-11.5,1-21.9-20.8,15.2-54.2c0.6-0.7,0.6-1.6-0.1-2.6
+                                            C428.7,418.6,447.8,432.4,416.4,473.3L416.4,473.3z M423.5,411.7c-9,2.8-21.1,11-22.1,15.6c-0.4,0.4-0.4,1.2-0.4,1.7
+                                            c-6.4,5.2-16.4,14.6-23.9,25.9c-30.9,48.4,7,85.5,49.9,38.3C478.7,436.6,461.8,399.3,423.5,411.7L423.5,411.7z"></path>
+<path d="M100.5,96.8c-80,24.6-79.6,65.2-61.4,71.7C50,172,65.8,170.5,92,157c76.6-40.1,57.3-74.6,10.2-64.1
+                                            C102.5,94.8,101.9,96.3,100.5,96.8L100.5,96.8z M124.9,77.9c52.3,6.3,51.9,60-40.6,98.7C7.4,209-17.2,144.1,46.1,103.7
+                                            C61.2,94.2,78.2,88.6,88.7,86c0.2-0.5,0.6-1.5,1.3-1.8C93.8,79.4,112.7,76.3,124.9,77.9L124.9,77.9z"></path>
+<g>
+<path d="M656.5,366.7l-0.2,0.1C656,367,656.2,366.9,656.5,366.7L656.5,366.7z"></path>
+<path d="M228,49.3c0.1,0.3,0.3,0.6,0.4,0.9C228.3,49.9,228.1,49.6,228,49.3L228,49.3z M777.7,102.5
+                                                c2.3-21-9.7-39.5-30.6-43.7c-12.8-2.6-25.6-0.3-38.2,2.2c-12.1,2.4-24.2,4.7-36.2,7.2c-37.8,7.8-75.4,16.6-113.1,24.7
+                                                c-39.3,8.4-77.8,18.7-116.2,30.5c-8.2,2.5-16.4,5.1-24.5,8c-1.8,0.7-12,3.4-12.2,5.9c-0.5,4.3,31.7,2.3,34.6,2.2
+                                                c40.9-1.9,82.5-5.8,122.7-14.3c17.9-3.8,35.8-8,53.7-12c11.6-2.6,23.2-5.1,34.8-7.5c7.5-1.6,16.4-4.1,22.8,1.9
+                                                c12.5,11.5-10.8,21.7-19.4,24.6c-9.9,3.4-20.1,6.2-30.2,8.9c-29.1,7.8-58.4,14.6-87.8,21.1c-46.8,10.5-94.5,19.1-141.6,28.5
+                                                c-0.9,0.2-2.5,0.9-1.9,1.8c28.9-4.8,57.9-9.1,86.8-13.2c47.8-6.7,96-13.6,144.3-15.7c8.2-0.4,16.5-0.6,24.7-0.1
+                                                c4.6,0.3,10.4,0.3,14.6,2.6c8.8,4.6-7.2,12.3-10.6,13.9c-17.7,8.4-37.1,13.7-55.9,19.1c-24.8,7-49.8,13.2-74.9,19.1
+                                                c-36.1,8.5-72.4,16-108.7,23.6c-0.6,0.1-2.2,1-1.6,1.3c24.5-3.5,48.7-7.6,73.2-10.5c40.2-4.9,80.6-9.9,121.1-11.3
+                                                c6.6-0.2,13.3-0.4,19.9,0c3.2,0.2,8.3,0,11.1,2c5.2,3.6-6.9,7.6-9.2,8.5c-13,5.1-26.7,8.6-40.1,12.1c-18.6,4.9-37.3,9.4-55.9,13.8
+                                                c-33.1,7.9-66.7,14.7-99.2,24.8c-1.7,0.5-15.3,4.1-13.1,7c1.4,1.9,8.4,1.2,10.3,1.2c7.3-0.1,14.5-0.8,21.7-1.7
+                                                c42.8-5,85-13.9,127.7-20c16.4-2.3,33.4-5.1,50-4.4c4.8,0.2,17.9,1.6,11.2,9c-3.2,3.6-8.2,5.8-12.4,7.8c-7,3.2-14.2,5.9-21.5,8.3
+                                                c-19.3,6.5-39.1,11.8-58.8,16.9c-33.8,8.6-68.1,15.4-101.9,24.1c-0.3,0.1-5.8,1.5-5.7,1.9c0.5,0.9,6.4-0.1,7.2-0.2
+                                                c6.1-0.5,12.2-1.2,18.3-1.9c18.5-2,37.1-4.1,55.6-5.9c19-1.8,38-3.4,57-3.5c6.9-0.1,13.8,0,20.6,1c3,0.4,8.6,0.9,10.5,3.8
+                                                c2.5,3.8-3.5,7.9-6,9.7c-12.1,8.6-27.6,13-41.7,16.9c-35.4,9.6-72.7,9.1-109.1,8.4c-10.3-0.2-20.7-0.6-31-1.2
+                                                c-8.5-0.5-18.6-0.2-26.6-3.7c-12.8-5.6-18.8-20.1-22.2-32.7c-9.3-35.1-18.5-70.3-27.8-105.4c-9.8-37.3-19.6-74.5-29.4-111.8
+                                                c-4.5-17.3-8.6-35.8-21.6-48.9c-12.4-12.5-29.5-17.6-46.8-14.8c-7.3,1.2-14.5,3.5-21.1,7c-0.1,0,0.3-0.2,0.3-0.1v0
+                                                c-7.7,2.1-15.5,6.8-22.7,10.1c-9.5,4.5-19,9-28.2,14c-14.4,7.9-27.8,16.8-41.1,26.4c31.8-9,63.7-18,95.5-27
+                                                c12.1-3.4,31.7-12.1,37.5,4.6c6.8,19.6,11.7,39.9,17.2,59.9c17.9,65.4,35.9,130.9,53.8,196.3c8.1,29.8,28.8,55.9,61.2,59.6
+                                                c35.2,3.9,71.4,3.4,106.8,1.9c25.2-1.1,50.7-5.6,75.5-9.7c21.3-3.6,33.5-5.9,57.3-12.3c12.3-3.3,20.3-8.4,24.4-10.6
+                                                c35.7-19.2,44.8-38.7,54.5-70c12.6-40.9,25.3-81.9,38-122.8c3.7-12,7.4-24,11.2-36C771.9,123.5,776.4,113,777.7,102.5
+                                                C778,100.3,777.6,103.6,777.7,102.5L777.7,102.5z"></path>
+</g>
+</svg>
+<div class="itemCount animateBoing md-whiteframe-3dp ng-binding">{{cartitemlength}}</div>
+</a>
+<span class="cartvaluenotification" ng-class="{'shownotify': cartvaluenotishow == '1'}"><span ng-bind-html="cartvaluenoti" class="ng-binding"></span></span>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav class="toplogowrap for-mobile">
+<div class="container">
+<div class="logowrap clearfix">
+<button class="md-icon-button md-primary navbtnwrap md-button md-ink-ripple" ng-click="openMenuMobileSideBar()">
+<span class="navbtn close_popup_btn">
+<i class="line"></i>
+<i class="line mid"></i>
+<i class="line"></i>
+</span>
+</button>
+<a class="logo" ng-href="{{indexUrl}}"><img src="images/Metro-gala-logo.png"></a>
+<div class="newheaderSearch" ng-class="{searchshow: showheadersearch}">
+<div class="searchWrap" ng-class="{searchshow: showheadersearch}">
+<form name="searchform" ng-submit="serachFormsubmit(selectedItem)" novalidate autocomplete="off">
+<md-autocomplete md-input-name="searchfielinput" md-no-cache="true" md-input-class="searchproducts" md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getsearchdata(searchText)" md-item-text="item.product_name" placeholder="Search">
+<md-item-template>
+<a class="searcitem" ng-class="item.searchclass" ng-href="{{item.product_url}}">
+<span class="image"><img ng-src="{{item.images}}" class="img" alt="" ng-if="item.images != 0"><span class="icon" ng-if="item.icon != 0">{{item.icon}}</span></span>
+<span class="name">{{item.product_name}}</span>
+<span class="price" ng-if="item.product_price != 0">Rs. {{item.product_price}}
+<del ng-if="item.product_sale_price != 0">Rs.{{(item.product_price * 1) + (item.product_sale_price * 1)}}</del>
+</span>
+</a>
+</md-item-template>
+<md-not-found>
+No Product matching "{{searchText}}" were found.
+</md-not-found>
+</md-autocomplete>
+<md-button class="md-raised" aria-label="Search" type="submit" ng-disabled="searchform.$invalid">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.99 36">
+<defs>
+<style>
+                                                    .cls-1 {
+                                                    fill: #a4a4a4;
+                                                    }
+                                                </style>
+</defs>
+<title>Search icon</title>
+<path class="cls-1" d="M35.69,34.17l-8.75-8.74a15.35,15.35,0,1,0-1.52,1.52l8.75,8.74a1.08,1.08,0,0,0,.76.32,1.05,1.05,0,0,0,.76-.32A1.08,1.08,0,0,0,35.69,34.17ZM2.18,15.37A13.19,13.19,0,1,1,15.37,28.57h0A13.19,13.19,0,0,1,2.18,15.37Z" transform="translate(0 0)" />
+</svg>
+</md-button>
+</form>
+</div>
+</div>
+<div class="rightButtons">
+<div class="accountWrap rightlink floatLeft">
+<span class="link" ng-if="!metrologin">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+<defs>
+<style>.cls-1{fill:#163e7c;}</style>
+</defs>
+<title>Sign in</title>
+<path class="cls-1" d="M18,0A10.13,10.13,0,0,0,7.68,9.91c0,5.48,4.64,15.54,10.32,15.54S28.32,15.38,28.32,9.91A10.13,10.13,0,0,0,18,0" />
+<path class="cls-1" d="M9.28,24.72C3.76,26.25,0,29.32,0,33.26,0,35.19,1.28,36,4.88,36H31.12c3.6,0,4.88-.81,4.88-2.74,0-3.95-3.76-7-9.28-8.54-2.32,2.82-5.28,4.83-8.72,4.83s-6.4-2-8.72-4.83" />
+</svg>
+<span>
+<span class="Name hideontablet ng-binding ng-scope">Hello Guest</span>
+<br class="hideontablet">
+<span class="ng-scope">
+Your Account
+<svg viewBox="6 6 12 12" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z"></path>
+<path d="M0 0h24v24H0z" fill="none"></path>
+</svg>
+</span>
+</span>
+<div class="select ng-scope">
+<div class="list md-whiteframe-3dp">
+<a ng-click="saveurl()" href="./signin">Login</a>
+<a href="./signup">Register</a>
+</div>
+</div>
+</span>
+<span class="link" ng-if="metrologin">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+<defs>
+<style>.cls-1{fill:#163e7c;}</style>
+</defs>
+<title>Sign in</title>
+<path class="cls-1" d="M18,0A10.13,10.13,0,0,0,7.68,9.91c0,5.48,4.64,15.54,10.32,15.54S28.32,15.38,28.32,9.91A10.13,10.13,0,0,0,18,0" />
+<path class="cls-1" d="M9.28,24.72C3.76,26.25,0,29.32,0,33.26,0,35.19,1.28,36,4.88,36H31.12c3.6,0,4.88-.81,4.88-2.74,0-3.95-3.76-7-9.28-8.54-2.32,2.82-5.28,4.83-8.72,4.83s-6.4-2-8.72-4.83" />
+</svg>
+<span>
+<span class="Name hideontablet ng-binding ng-scope">Hello {{metrologin}}</span>
+<br class="hideontablet">
+<span class="ng-scope">
+Your Account
+<svg viewBox="6 6 12 12" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10l5 5 5-5z"></path>
+<path d="M0 0h24v24H0z" fill="none"></path>
+</svg>
+</span>
+</span>
+<div class="select ng-scope">
+<div class="list md-whiteframe-3dp">
+<a href="./myaccount">My Profile</a>
+<a href="./myorder">My Orders</a>
+<a href="./savedcart">Saved Cart</a>
+<a href="./shoppinglist">My Shopping List</a>
+<div class="logoutbutton">
+<button ng-click="logoutfromweb();" class="blueButton md-button md-ink-ripple">Logout</button>
+</div>
+</div>
+</div>
+</span>
+</div>
+<div class="cart floatLeft">
+<a href="./viewcart" class="carticonanchor" ng-class="itemaddedtocart">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 792 612">
+<path d="M548,480.6c-14.4,18.5-25.4,24.9-34.4,26.1c-15.4,1.4-29.3-27.8,20.4-72.5c0.8-0.9,0.8-2.2-0.1-3.4
+                                            C564.5,407.3,590,425.9,548,480.6L548,480.6z M557.4,399.6c-11.7,3.6-27.5,14.4-28.9,20.3c-0.5,0.6-0.5,1.6-0.5,2.2
+                                            c-8.4,6.7-21.4,19-31.2,33.9c-40.4,63.2,9.1,111.7,65.2,50C629.5,432.2,607.4,383.4,557.4,399.6L557.4,399.6z"></path>
+<path d="M416.4,473.3c-10.8,13.9-19,18.6-25.7,19.5c-11.5,1-21.9-20.8,15.2-54.2c0.6-0.7,0.6-1.6-0.1-2.6
+                                            C428.7,418.6,447.8,432.4,416.4,473.3L416.4,473.3z M423.5,411.7c-9,2.8-21.1,11-22.1,15.6c-0.4,0.4-0.4,1.2-0.4,1.7
+                                            c-6.4,5.2-16.4,14.6-23.9,25.9c-30.9,48.4,7,85.5,49.9,38.3C478.7,436.6,461.8,399.3,423.5,411.7L423.5,411.7z"></path>
+<path d="M100.5,96.8c-80,24.6-79.6,65.2-61.4,71.7C50,172,65.8,170.5,92,157c76.6-40.1,57.3-74.6,10.2-64.1
+                                            C102.5,94.8,101.9,96.3,100.5,96.8L100.5,96.8z M124.9,77.9c52.3,6.3,51.9,60-40.6,98.7C7.4,209-17.2,144.1,46.1,103.7
+                                            C61.2,94.2,78.2,88.6,88.7,86c0.2-0.5,0.6-1.5,1.3-1.8C93.8,79.4,112.7,76.3,124.9,77.9L124.9,77.9z"></path>
+<g>
+<path d="M656.5,366.7l-0.2,0.1C656,367,656.2,366.9,656.5,366.7L656.5,366.7z"></path>
+<path d="M228,49.3c0.1,0.3,0.3,0.6,0.4,0.9C228.3,49.9,228.1,49.6,228,49.3L228,49.3z M777.7,102.5
+                                                c2.3-21-9.7-39.5-30.6-43.7c-12.8-2.6-25.6-0.3-38.2,2.2c-12.1,2.4-24.2,4.7-36.2,7.2c-37.8,7.8-75.4,16.6-113.1,24.7
+                                                c-39.3,8.4-77.8,18.7-116.2,30.5c-8.2,2.5-16.4,5.1-24.5,8c-1.8,0.7-12,3.4-12.2,5.9c-0.5,4.3,31.7,2.3,34.6,2.2
+                                                c40.9-1.9,82.5-5.8,122.7-14.3c17.9-3.8,35.8-8,53.7-12c11.6-2.6,23.2-5.1,34.8-7.5c7.5-1.6,16.4-4.1,22.8,1.9
+                                                c12.5,11.5-10.8,21.7-19.4,24.6c-9.9,3.4-20.1,6.2-30.2,8.9c-29.1,7.8-58.4,14.6-87.8,21.1c-46.8,10.5-94.5,19.1-141.6,28.5
+                                                c-0.9,0.2-2.5,0.9-1.9,1.8c28.9-4.8,57.9-9.1,86.8-13.2c47.8-6.7,96-13.6,144.3-15.7c8.2-0.4,16.5-0.6,24.7-0.1
+                                                c4.6,0.3,10.4,0.3,14.6,2.6c8.8,4.6-7.2,12.3-10.6,13.9c-17.7,8.4-37.1,13.7-55.9,19.1c-24.8,7-49.8,13.2-74.9,19.1
+                                                c-36.1,8.5-72.4,16-108.7,23.6c-0.6,0.1-2.2,1-1.6,1.3c24.5-3.5,48.7-7.6,73.2-10.5c40.2-4.9,80.6-9.9,121.1-11.3
+                                                c6.6-0.2,13.3-0.4,19.9,0c3.2,0.2,8.3,0,11.1,2c5.2,3.6-6.9,7.6-9.2,8.5c-13,5.1-26.7,8.6-40.1,12.1c-18.6,4.9-37.3,9.4-55.9,13.8
+                                                c-33.1,7.9-66.7,14.7-99.2,24.8c-1.7,0.5-15.3,4.1-13.1,7c1.4,1.9,8.4,1.2,10.3,1.2c7.3-0.1,14.5-0.8,21.7-1.7
+                                                c42.8-5,85-13.9,127.7-20c16.4-2.3,33.4-5.1,50-4.4c4.8,0.2,17.9,1.6,11.2,9c-3.2,3.6-8.2,5.8-12.4,7.8c-7,3.2-14.2,5.9-21.5,8.3
+                                                c-19.3,6.5-39.1,11.8-58.8,16.9c-33.8,8.6-68.1,15.4-101.9,24.1c-0.3,0.1-5.8,1.5-5.7,1.9c0.5,0.9,6.4-0.1,7.2-0.2
+                                                c6.1-0.5,12.2-1.2,18.3-1.9c18.5-2,37.1-4.1,55.6-5.9c19-1.8,38-3.4,57-3.5c6.9-0.1,13.8,0,20.6,1c3,0.4,8.6,0.9,10.5,3.8
+                                                c2.5,3.8-3.5,7.9-6,9.7c-12.1,8.6-27.6,13-41.7,16.9c-35.4,9.6-72.7,9.1-109.1,8.4c-10.3-0.2-20.7-0.6-31-1.2
+                                                c-8.5-0.5-18.6-0.2-26.6-3.7c-12.8-5.6-18.8-20.1-22.2-32.7c-9.3-35.1-18.5-70.3-27.8-105.4c-9.8-37.3-19.6-74.5-29.4-111.8
+                                                c-4.5-17.3-8.6-35.8-21.6-48.9c-12.4-12.5-29.5-17.6-46.8-14.8c-7.3,1.2-14.5,3.5-21.1,7c-0.1,0,0.3-0.2,0.3-0.1v0
+                                                c-7.7,2.1-15.5,6.8-22.7,10.1c-9.5,4.5-19,9-28.2,14c-14.4,7.9-27.8,16.8-41.1,26.4c31.8-9,63.7-18,95.5-27
+                                                c12.1-3.4,31.7-12.1,37.5,4.6c6.8,19.6,11.7,39.9,17.2,59.9c17.9,65.4,35.9,130.9,53.8,196.3c8.1,29.8,28.8,55.9,61.2,59.6
+                                                c35.2,3.9,71.4,3.4,106.8,1.9c25.2-1.1,50.7-5.6,75.5-9.7c21.3-3.6,33.5-5.9,57.3-12.3c12.3-3.3,20.3-8.4,24.4-10.6
+                                                c35.7-19.2,44.8-38.7,54.5-70c12.6-40.9,25.3-81.9,38-122.8c3.7-12,7.4-24,11.2-36C771.9,123.5,776.4,113,777.7,102.5
+                                                C778,100.3,777.6,103.6,777.7,102.5L777.7,102.5z"></path>
+</g>
+</svg>
+<div class="itemCount animateBoing md-whiteframe-3dp ng-binding">{{cartitemlength}}</div>
+</a>
+<span class="cartvaluenotification" ng-class="{'shownotify': cartvaluenotishow == '1'}"><span ng-bind-html="cartvaluenoti" class="ng-binding"></span></span>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="submenuwhensighin" ng-if="metrologin">
+<div class="container">
+<ul class="signinmenu clearfix">
+<li><a href="./browsinghistory">Browsing History</a></li>
+<li><a href="./recommendedproducts">Recommended for you</a></li>
+</ul>
+</div>
+</div>
+<div id="sideBarNav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" ng-click="closeMenuMobileSideBar()"><img src="./images/back.png"></a>
+<div>
+<div class="tab_2">
+<button class="tablinks_2" ng-repeat="(key, menu) in menulisthamburger" ng-click="openMenuMobile($event, menu.title)" id="defaultOpen">
+<img src="{{menu.image_mob}}">
+<div class="tb-txt">{{menu.title}}</div>
+</button>
+</div>
+<div ng-repeat="(key, menu) in menulisthamburger" id="{{menu.title}}-mobile" class="tabcontent_2">
+<div class="mbile-sub">
+<ul>
+<li ng-repeat="(i, detail) in menu.detail">
+<a href="javascript:void(0);" ng-click="openSubMenuMobileSideBar(key + '_' + i)">
+<md-icon md-svg-src="{{detail.menu_image}}" alt="" class="ng-scope prom" aria-hidden="true">
+</svg>
+</md-icon>
+{{detail.text}}
+</a>
+<div class="side-bar side-bar_{{key + '_' + i}}">
+<a href="javascript:void(0);" class="close-btn_{{key + '_' + i}}" ng-click="openSubMenuMobileSideBar(key + '_' + i)">
+<img src="images/back.png">
+</a>
+<a ng-repeat="subitem in detail.subitem" href="javascript:void(0);" ng-click="clickHamBurgerMenuSidebar('MNM', subitem.url)">{{subitem.text}}</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="primarymenuwrapper for-desktop" id="primarymenuwrap">
+<div class="container">
+<div class="menulistwrap cstm">
+<div class="menulist custom-bg">
+<ul class="mainlist">
+<div class="sub-menu-full">
+<div class="tab">
+<button ng-repeat="(key, menu) in menulisthamburger" ng-class="{'active': $first}" class="tablinks" ng-click="openMenu($event, menu.title)" id="default{{key}}">{{menu.title}}</button>
+</div>
+<div ng-repeat="menu in menulisthamburger" id="{{menu.title}}" class="tabcontent" ng-class="{' active': $first}" style="background-image: url('{{menu.image}}')">
+<div class="tab-main">
+<div class="fst-cont">
+<ul class="{{menu.title}} tabs-list">
+<li class="main-pro" ng-repeat="detail in menu.detail">
+<a href="#" style="cursor: context-menu;">
+<div class="hvr-icon">
+<md-icon md-svg-src="{{detail.menu_image}}" alt="" class="ng-scope prom" aria-hidden="true">
+</svg>
+</md-icon>
+</div>
+{{detail.text}}
+</a>
+<ul class="promo-list">
+<li ng-repeat="subitem in detail.subitem">
+<a href="javascript:void(0);" ng-click="clickHamBurgerMenu('MND', subitem.url)">{{subitem.text}}</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="index_wrapper clearfix" ng-cloak>
+<ng-view></ng-view>
+<div class="ce-banner">
+<p>This websites uses cookies to give you the <i>best</i> possible experience.
+<a href="./privacypolicy">Read More</a>
+<a href="#" class="ce-accept">Enable Cookies</a><a href="#" class="ce-dismiss">Close</a></p>
+</div>
+</div>
+<footer id="footer">
+<h6 class="backtoptop">
+<a onclick="if (!window.__cfRLUnblockHandlers) return false; bactotop()" href="javascript:void(0);" data-cf-modified-c1d36449184eba96d22b535c-="">
+<span>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+<path d="M0 0h24v24H0z" fill="none" />
+</svg>
+</span>
+Back to Top
+</a>
+</h6>
+<div class="bottomlinks">
+<div class="container">
+<div class="row">
+<div class="imgcol-md-9 imgcol-sm-8">
+<div class="row">
+<div class="imgcol-sm-4">
+<div class="linksection">
+<div class="row">
+<div class="imgcol-sm-12">
+<h6>Shop Anywhere Anytime</h6>
+</div>
+</div>
+<ul class="shippinginfor">
+<li>
+<i class="icon">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<path d="M42,13.1c0-0.2-0.2-0.3-0.4-0.3h-6.8v-1.9C34.9,4.9,30,0,24,0S13.1,4.9,13.1,10.9v1.9H6.4c-0.2,0-0.4,0.2-0.4,0.3L3.4,47.6
+                                                            c0,0.1,0,0.2,0.1,0.3C3.5,48,3.6,48,3.8,48h40.5c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.2,0.1-0.3L42,13.1z M24,3c4.3,0,7.9,3.5,7.9,7.9
+                                                            v1.9H16.1v-1.9C16.1,6.5,19.7,3,24,3z M14.6,23.3c-2.1,0-3.8-1.7-3.8-3.8c0-1.5,0.8-2.8,2.3-3.4v3.4c0,0.8,0.7,1.5,1.5,1.5
+                                                            s1.5-0.7,1.5-1.5v-3.4c1.5,0.6,2.3,2,2.3,3.4C18.4,21.6,16.7,23.3,14.6,23.3z M33.4,23.3c-2.1,0-3.8-1.7-3.8-3.8
+                                                            c0-1.5,0.8-2.8,2.3-3.4v3.4c0,0.8,0.7,1.5,1.5,1.5c0.8,0,1.5-0.7,1.5-1.5v-3.4c1.5,0.6,2.3,2,2.3,3.4C37.1,21.6,35.4,23.3,33.4,23.3
+                                                            z" />
+</svg>
+</i>
+<h6>Easy Shopping</h6>
+</li>
+<li>
+<i class="icon">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g>
+<path d="M24,0c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S29,0,24,0z M24,6c-1.7,0-3,1.3-3,3c0,0.6-0.4,1-1,1s-1-0.4-1-1c0-2.8,2.2-5,5-5
+                                                                c0.6,0,1,0.4,1,1S24.6,6,24,6z" />
+<g>
+<path d="M18.5,33.7C20.1,33.9,22,34,24,34s3.9-0.1,5.5-0.3c0.3,0,0.6-0.3,0.8-0.6c0.1-0.3,0.1-0.7,0-1l-0.4-0.7
+                                                                    C29.7,31.2,29.3,31,29,31H19c-0.4,0-0.7,0.2-0.9,0.5l-0.4,0.7c-0.2,0.3-0.2,0.6,0,1S18.2,33.6,18.5,33.7z" />
+<path d="M38.3,32.3c-0.3-0.1-0.7-0.1-1,0.1s-0.5,0.5-0.4,0.9c0,0.9-0.1,1.8-0.4,2.5C35.7,37.6,34,39,32,39.3c-2.3,0.4-5,0.7-8,0.7
+                                                                    s-5.6-0.2-8-0.6c-2.1-0.4-3.8-1.7-4.6-3.7c-0.3-0.7-0.5-1.6-0.4-2.5c0-0.3-0.2-0.7-0.4-0.9c-0.3-0.2-0.6-0.2-1-0.1
+                                                                    C9,32.5,7,33.4,7,35v4c0,0.2,0.1,0.5,0.2,0.6C7.4,39.8,10.9,44,24,44s16.6-4.2,16.8-4.4c0.1-0.2,0.2-0.4,0.2-0.6v-4
+                                                                    C41,33.4,39,32.5,38.3,32.3z" />
+</g>
+<path d="M34.3,31.1C31.7,27.3,29,21,29,16c0-0.6-0.4-1-1-1s-1,0.4-1,1h-6c0-0.6-0.4-1-1-1s-1,0.4-1,1c0,5-2.7,11.3-5.3,15.1
+                                                                c-0.8,1.1-0.9,2.6-0.4,3.9c0.5,1.3,1.7,2.2,3.1,2.5c2.2,0.4,4.8,0.6,7.6,0.6s5.4-0.2,7.6-0.6c1.4-0.3,2.5-1.2,3.1-2.5
+                                                                C35.2,33.7,35.1,32.2,34.3,31.1z" />
+<path d="M39,40.9c0-0.5-0.5-1-1.1-0.9c-0.5,0-0.9,0.5-0.9,1H11c0-0.6-0.4-1-1-1s-1,0.4-1,1v2c0,1.4,1.3,3.1,2.7,3.4
+                                                                C14,47,18.7,48,24,48s10-1,12.3-1.6c1.3-0.3,2.8-1.8,2.8-3.4L39,40.9z" />
+</g>
+</svg>
+</i>
+<h6>Freshness Guaranteed</h6>
+</li>
+<li>
+<a href="./deliveryinfo">
+<i class="icon">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<path d="M1.7,29.6V9.2c0-1.1,0.9-2.1,2.1-2.1h20.4c1.1,0,2.1,0.9,2.1,2.1v20.4c0,0.4-0.3,0.7-0.7,0.7H2.4C2,30.3,1.7,30,1.7,29.6
+                                                                L1.7,29.6z M18.2,36.6c0,2.4-1.9,4.3-4.3,4.3c-2.4,0-4.3-1.9-4.3-4.3c0-2.4,1.9-4.3,4.3-4.3C16.3,32.3,18.2,34.3,18.2,36.6
+                                                                L18.2,36.6z M16,36.6c0-1.2-1-2.1-2.1-2.1c-1.2,0-2.1,1-2.1,2.1s1,2.1,2.1,2.1C15.1,38.7,16,37.8,16,36.6L16,36.6z M10.2,32.3H0.7
+                                                                C0.3,32.3,0,32.7,0,33v2.1c0,0.4,0.3,0.7,0.7,0.7h7.7C8.5,34.4,9.2,33.2,10.2,32.3L10.2,32.3z M40.5,36.6c0,2.4-1.9,4.3-4.3,4.3
+                                                                c-2.4,0-4.3-1.9-4.3-4.3c0-2.4,1.9-4.3,4.3-4.3C38.6,32.3,40.5,34.3,40.5,36.6L40.5,36.6z M38.3,36.6c0-1.2-1-2.1-2.1-2.1
+                                                                c-1.2,0-2.1,1-2.1,2.1s1,2.1,2.1,2.1C37.4,38.7,38.3,37.8,38.3,36.6L38.3,36.6z M48,33v2.1c0,0.4-0.3,0.7-0.7,0.7h-5.5
+                                                                C41.4,33.1,39,31,36.2,31c-2.8,0-5.2,2.1-5.6,4.8H19.5c-0.2-1.4-0.9-2.6-1.9-3.4h10.6V12.8c0-0.8,0.6-1.4,1.4-1.4H36
+                                                                c1.8,0,3.5,0.9,4.5,2.4l4.2,6.2c0.6,0.9,0.9,2,0.9,3.1v9.3h1.7C47.7,32.3,48,32.7,48,33L48,33z M41.1,20.1l-3.3-4.7
+                                                                c-0.1-0.2-0.3-0.3-0.6-0.3H32c-0.4,0-0.7,0.3-0.7,0.7v4.7c0,0.4,0.3,0.7,0.7,0.7h8.5C41,21.2,41.4,20.6,41.1,20.1L41.1,20.1z
+                                                                M41.1,20.1" />
+</svg>
+</i>
+<h6>Open Box Delivery</h6>
+</a>
+</li>
+<li>
+<i class="icon">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g>
+<path d="M21,15v-3H3c-1.7,0-3,1.3-3,3v6h21.6C21.2,19.2,21,17.2,21,15z" />
+<path d="M38.2,35.4C37.6,35.8,36.8,36,36,36s-1.6-0.2-2.2-0.6c-4.5-2.6-7.6-5.3-9.6-8.4H0v15c0,1.7,1.3,3,3,3h42c1.7,0,3-1.3,3-3
+                                                                V27h-0.1C45.8,30.2,42.7,32.8,38.2,35.4z M13.5,36h-6C6.7,36,6,35.3,6,34.5C6,33.7,6.7,33,7.5,33h6c0.8,0,1.5,0.7,1.5,1.5
+                                                                C15,35.3,14.3,36,13.5,36z" />
+<path d="M47.1,7.6L36.6,3.1c-0.4-0.2-0.8-0.2-1.2,0L24.9,7.6C24.4,7.9,24,8.4,24,9v6c0,8.3,3.1,13.1,11.3,17.8
+                                                                c0.2,0.1,0.5,0.2,0.7,0.2s0.5-0.1,0.7-0.2C44.9,28.1,48,23.3,48,15V9C48,8.4,47.6,7.9,47.1,7.6z M41.7,14.4l-6,7.5
+                                                                c-0.3,0.4-0.7,0.6-1.2,0.6c0,0,0,0-0.1,0c-0.5,0-0.9-0.3-1.2-0.7l-3-4.5c-0.5-0.7-0.3-1.6,0.4-2.1c0.7-0.5,1.6-0.3,2.1,0.4l1.9,2.8
+                                                                l4.7-5.9c0.5-0.6,1.5-0.7,2.1-0.2C42.1,12.8,42.2,13.8,41.7,14.4z" />
+</g>
+</svg>
+</i>
+<h6>Secure Payment</h6>
+</li>
+<li>
+<a href="./nps">
+<i class="icon">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+<g>
+<path d="M4,16h4c2.2,0,4,1.8,4,4v32c0,2.2-1.8,4-4,4H4c-2.2,0-4-1.8-4-4V20C0,17.8,1.8,16,4,16z" />
+<path d="M48,16h-4c0-8.5-0.4-16-6-16h-4c-1.1,0-2,0.9-2,2c0,0,0,0,0,0c0,16.5-8.4,17.9-16,18v32.5c0.1,0.1,0.2,0.1,0.4,0.1
+                                                                    C19.5,53.9,24.6,56,42,56c7.7,0,14-6.3,14-14V24C56,19.6,52.4,16,48,16z" />
+</g>
+</svg>
+</i>
+<h6>Nps</h6>
+</a>
+</li>
+<li>
+<i class="icon">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+ <g>
+<path d="M46.1,34.2c-0.7-2.6-2.3-5.7-4.6-8.9c-1.1-1.6-1.1-1.6-1.2-2.8c-0.1-1.1-0.1-1.2-0.6-1.7l-0.5-0.5H24H8.8l-0.5,0.5
+                                                                c-0.5,0.5-0.5,0.6-0.6,1.7c-0.1,1.2-0.1,1.2-1.2,2.8c-2.2,3.2-3.8,6.3-4.6,8.9c-0.7,2.3-0.5,5.1,0.6,7.4c1,2.2,3.6,5,5.7,6.2
+                                                                L8.7,48l15.4,0l15.4,0l0.9-0.6c1.2-0.8,2.9-2.4,3.8-3.6C46.4,40.9,47.1,37.3,46.1,34.2z M7.6,36.1c0,4.2,0,7.6-0.1,7.6
+                                                                c-0.2,0-1.9-2-2.3-2.8c-1.1-2.1-1.4-3.9-0.9-5.8c0.3-1.2,1.7-4.3,2.7-5.9l0.5-0.9V36.1z M27.2,28.1c0.1,0,2.4,3.3,2.6,3.6
+                                                                c0.1,0.1-0.1,0.2-0.6,0.2h-0.7v3.5v3.5h-1.2H26v-3.5v-3.5h-0.7c-0.4,0-0.7,0-0.7-0.1C24.6,31.7,27.1,28.1,27.2,28.1z M20.8,28.1
+                                                                c0.1,0,2.6,3.6,2.6,3.7c0,0-0.3,0.1-0.7,0.1h-0.7v3.5v3.5h-1.2h-1.2v-3.5v-3.5h-0.7c-0.5,0-0.7-0.1-0.6-0.2
+                                                                C18.3,31.4,20.7,28.1,20.8,28.1z M31.5,41.3v1.2H24h-7.5v-1.2v-1.2H24h7.5V41.3z M42.7,41c-0.3,0.5-0.9,1.3-1.4,1.9l-0.9,1l0-7.7
+                                                                v-7.7l0.5,0.9c1,1.6,2.4,4.7,2.7,5.9C44.1,37.1,43.8,38.9,42.7,41z" />
+<path d="M14.6,18.6c0.8-0.4,2.8-1,4.1-1.2c0.5-0.1,0.9-0.3,0.9-0.4c0-0.1-0.3-0.8-0.9-1.6c-1.8-2.7-2.6-4.7-2.7-7.3
+                                                                c-0.2-4.1,1.7-7,5.3-7.9c1.2-0.3,4-0.3,5.1,0c2.7,0.7,4.5,2.5,5.1,5.3c0.3,1.3,0.2,3.8-0.2,5.2c-0.4,1.5-1.2,3-2.3,4.6
+                                                                c-0.6,0.8-0.9,1.5-0.9,1.6c0,0.1,0.4,0.3,0.9,0.4c1.4,0.3,3.3,0.8,4.1,1.2l0.8,0.4l-4,0l-4,0l-0.3-0.5c-0.3-0.4-0.3-0.7-0.3-1.5
+                                                                c0-1.2,0.2-1.7,1.3-3.2c0.8-1.1,1.7-3,2-4.1c0.5-2,0.2-4.2-0.7-5.4c-1.7-2.2-6.7-2.2-8.3,0c-0.9,1.2-1.2,3.4-0.7,5.4
+                                                                c0.3,1.2,1.2,3,2,4.1c1.1,1.5,1.3,2,1.3,3.2c0,0.8-0.1,1.1-0.3,1.5L21.8,19l-4,0l-4,0L14.6,18.6z" />
+</g>
+</svg>
+</i>
+<h6>Self Pickup</h6>
+</li>
+</ul>
+</div>
+</div>
+<div class="imgcol-sm-4">
+<div class="linksection pl0">
+<h6>Help</h6>
+<ul>
+<li><a href="./aboutus">About Us</a></li>
+<li><a href="./marketsaysasta">Market Say Sasta</a></li>
+<li><a href="./faqs">FAQs</a></li>
+<li><a href="./privacypolicy">Privacy Policy</a></li>
+
+<li><a href="./termscondition">Terms & Condition</a></li>
+<li ng-if="metrologin"><a href="./trackmyorder">Track your Order</a></li>
+<li><a target="_blank" href="https://www.metro.pk/stores">Store Locator</a></li>
+<li><a target="_blank" href="https://metro-online.pk/deliveryreturn">Return Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="imgcol-sm-4">
+ <div class="linksection">
+<h6>Contact Us:</h6>
+<p class="contactnumber">
+<a href="tel:(042)111-0-METRO">
+<i class="icon">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g>
+<path d="M39.2,32c-1.2-1.1-2.8-1.7-4.4-1.7c-1.8,0-3.6,0.8-4.8,2.1l-1.4,1.6c-0.6,0.7-1.1,1.4-1.3,2.3l-0.1,0.4l-0.4-0.1
+                                                                c-6.3-2.5-11.5-7.2-14.5-13.3L12,22.9l0.4-0.1c1.1-0.3,2.2-1,3-1.9l1.4-1.6c1.2-1.3,1.8-3,1.7-4.7c-0.1-1.7-0.8-3.3-2.1-4.5L14,7.9
+                                                                c-1.2-1.1-2.8-1.7-4.4-1.7C7.7,6.2,6,7,4.7,8.4L3.3,9.9c-0.2,0.2-0.4,0.4-0.5,0.7l-0.1,0.1c-1.3,1.1-2.5,3.9-1.8,7.4
+                                                                C4,33.9,17.3,46,33.5,47.5c2.1,0.2,4.1-0.2,5.6-1.2c0.6-0.3,1.1-0.8,1.6-1.3l1.4-1.6c2.4-2.7,2.2-6.8-0.5-9.2L39.2,32z" />
+<path d="M24.9,0.5c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5c10.7,0,19.3,8.7,19.3,19.3c0,0.8,0.7,1.5,1.5,1.5
+                                                                c0.8,0,1.5-0.7,1.5-1.5C47.3,10.5,37.2,0.5,24.9,0.5z" />
+<path d="M36.8,23.1c0,0.8,0.7,1.5,1.5,1.5c0.8,0,1.5-0.7,1.5-1.5c0-8.4-6.8-15.2-15.2-15.2c-0.8,0-1.5,0.7-1.5,1.5
+                                                                c0,0.8,0.7,1.5,1.5,1.5C31.3,11,36.8,16.4,36.8,23.1z" />
+</g>
+</svg>
+</i>
+(042) 111-0-METRO
+</a>
+</p>
+
+<p class="contactnumber">
+<a href="./feedback">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<path d="M42.4,2.8H5.6C2.5,2.8,0,5.4,0,8.5v19.8c0,3.1,2.5,5.6,5.6,5.6h2.8v9.9c0,0.4,0.1,0.7,0.4,1c0.6,0.6,1.4,0.6,2,0l11.7-10.9
+                                                        h19.8c3.1,0,5.6-2.5,5.6-5.6V8.5C48,5.4,45.5,2.8,42.4,2.8z M32.5,14.1H9.9c-0.8,0-1.4-0.6-1.4-1.4c0-0.8,0.6-1.4,1.4-1.4h22.6
+                                                        c0.8,0,1.4,0.6,1.4,1.4C33.9,13.5,33.3,14.1,32.5,14.1z" />
+</svg>
+<i>Feedback</i>
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="imgcol-md-3 imgcol-sm-4">
+<div class="footerfollowuWrapper">
+<h6>Got Question? Call Us</h6>
+<div class="calliconwrap">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.9 35.83">
+<ellipse class="cls-1" cx="17.95" cy="17.34" rx="11.92" ry="12.17" />
+<path class="cls-1" d="M3.95,24.84V12.31A14.9,14.9,0,0,1,18,2.21,15.05,15.05,0,0,1,31.87,11.7V23.14a15.08,15.08,0,0,1-11.92,9.37,2.15,2.15,0,0,0-1.89-1.1,2.29,2.29,0,0,0-2.25,2.25,2.25,2.25,0,0,0,2.25,2.25,2.28,2.28,0,0,0,2.07-1.34A17.12,17.12,0,0,0,33.64,24.42a4.15,4.15,0,0,0,2.31-3.65V14a4,4,0,0,0-2.31-3.65A17.11,17.11,0,0,0,18.12.08,17,17,0,0,0,2.67,10.24,4.1,4.1,0,0,0,.06,14v6.75A3.85,3.85,0,0,0,3.95,24.84Z" transform="translate(-0.05 -0.08)" />
+</svg>
+<span class="tel">(042) 111-0-METRO </span>
+</div>
+<div class="socialmedia_N_appicons">
+<div class="downloadappWrapper">
+<div class="appiconwrap clearfix">
+<a href="https://itunes.apple.com/pk/app/metro-online/id1262899618?mt=8" class="appstore"><img src="images/appstore.png" alt=""></a>
+<a href="https://market.android.com/details?id=com.metro.metroestore" class="googleplay" target="_blank"><img src="images/googleplay.png?1" alt=""></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="categorytextbox pt0" ng-if="Page.footerBottomtext() != ''">
+
+<div class="container">
+<div ng-bind-html="Page.footerBottomtext() ? Page.footerBottomtext() : ''"></div>
+</div>
+</div>
+<div class="copywriteWrapper">
+<div class="container clearfix">
+<p class="floatLeft copytext">
+&copy; METRO Pakistan (Pvt) Limited 2022<a href="./faqs">FAQ</a>
+</p>
+<p class="floatRight">Designed and developed by <a href="http://blue-ex.com/" target="_blank">blueEx</a>
+ </p>
+</div>
+</div>
+</footer>
+<div class="homeFlautingIcon">
+<a href="./home" ng-if="maincattypecheck == 'nonFoodMenu' && scity.food == 'Y'">
+
+<span class="img"><img src="./images/Grocery-Flaouting.png" alt=""></span>
+<span>
+Grocery
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.28 36">
+<path id="Forma_1" data-name="Forma 1" d="M10.54,35.63a1.25,1.25,0,0,1-.9.37,1.28,1.28,0,0,1-.9-.37,1.29,1.29,0,0,1,0-1.8L24.58,18,8.73,2.16A1.28,1.28,0,0,1,10.54.36L27.27,17.09a1.29,1.29,0,0,1,0,1.8Z" transform="translate(-8.36 0)" />
+</svg>
+</span>
+</a>
+<a href="./nf_shopping" ng-if="maincattypecheck == 'groceryMenu' && scity.food == 'Y'">
+<span class="img"><img src="./images/Electric-Flaouting.png" alt=""></span>
+<span>
+Electronics
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.28 36">
+<title>Carousal Arrow</title>
+<path id="Forma_1" data-name="Forma 1" d="M10.54,35.63a1.25,1.25,0,0,1-.9.37,1.28,1.28,0,0,1-.9-.37,1.29,1.29,0,0,1,0-1.8L24.58,18,8.73,2.16A1.28,1.28,0,0,1,10.54.36L27.27,17.09a1.29,1.29,0,0,1,0,1.8Z" transform="translate(-8.36 0)" />
+</svg>
+</span>
+</a>
+</div>
+<div class="notifytoast" id="notifytostwrap" ng-class="{'showNotification':showNotification}">
+<md-button class="md-icon-button closeiconbtn" type="button" aria-label="closepop" ng-click="hideingNotification()">
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+<path d="M0 0h24v24H0z" fill="none" />
+</svg>
+</md-button>
+<a ng-href="{{notificationObj.url}}" class="inner">
+<div class="img"><img ng-src="{{notificationObj.image}}" alt=""></div>
+<div class="text">
+<h6>{{notificationObj.title}}</h6>
+<p>{{notificationObj.Msg}}</p>
+</div>
+</a>
+</div>
+<script type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script type="c1d36449184eba96d22b535c-text/javascript"></script>
+<script type="c1d36449184eba96d22b535c-text/javascript">
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires="+d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            $('.ce-accept').click(function() {
+                setCookie('cookieconsent_dismissed','yes', 365);
+                 $('.ce-banner').fadeOut();
+                fbPixelEnabled();
+            })
+            if ((getCookie('cookieconsent_dismissed') != 'yes') && (getCookie('cookieconsent_dismissed') != 'no')){
+                $('.ce-banner').delay(5000).fadeIn();
+            }
+            $('.ce-dismiss').click(function() {
+                setCookie('cookieconsent_dismissed','no', 365);
+                $('.ce-banner').fadeOut();
+            })
+        </script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c1d36449184eba96d22b535c-|49" defer=""></script></body>
+</html>
